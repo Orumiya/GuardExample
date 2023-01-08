@@ -1,2 +1,3 @@
-<button mat-raised-button color="primary">Normal</button>
-<button mat-raised-button color="accent">VIP</button>
+<mat-checkbox [checked]="isVip" (change)="toggle($event)" class="large-margin">I am a VIP subscriber</mat-checkbox>
+<button mat-raised-button color="primary" (click)="onNormalClick()" class="basic-margin">Normal content</button>
+<button mat-raised-button color="accent" (click)="onVipClick()" class="basic-margin">VIP content</button>

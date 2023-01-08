@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatCheckboxChange } from '@angular/material/checkbox';
+import { Router } from '@angular/router';
+import { VipService } from '../service/vip.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  isVip: boolean = false;
+  constructor(private router: Router, private vipService: VipService) { }
 
   ngOnInit(): void {
+    this.vipService.currentVipStatus.subscribe(res => {
+      this.isVip = res;
+    });
+  }
+
+  onNormalClick(): void {
+    this.router.navigate(['/normal']);
+  }
+
+  onVipClick(): void {
+    this.router.navigate(['/vip']);
+  }
+
+  toggle($event: MatCheckboxChange): void {
+    this.isVip = $event.checked;
+    this.vipService.setVipStatus($event.checked);
   }
 
 }
