@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   constructor(private router: Router, private vipService: VipService) { }
 
   ngOnInit(): void {
-    this.vipService.currentVipStatus.subscribe(res => {
+    this.vipService.isVip().subscribe(res => {
       this.isVip = res;
     });
   }
@@ -28,7 +28,6 @@ export class DashboardComponent implements OnInit {
   }
 
   toggle($event: MatCheckboxChange): void {
-    this.isVip = $event.checked;
     this.vipService.setVipStatus($event.checked);
   }
 

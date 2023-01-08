@@ -8,14 +8,16 @@ import { Observable, of } from "rxjs";
 export class VipService {
     constructor(private httpClient: HttpClient) { }
 
-    currentVipStatus: Observable<boolean> = of(false);
+    private currentVipStatus: Observable<boolean> = of(false);
+
+    isVip(): Observable<boolean> {
+        return this.currentVipStatus;
+    }
 
     getVipStatus(): Observable<boolean> {
-        return this.currentVipStatus;
-
-        /* If we need to get a fresh data from the backend, setup the proper API call
-         return this.httpClient.get<boolean>('someURL/getvipstatus');
-        */
+       // If we need to get a fresh data from the backend, setup the proper API call
+      return this.httpClient.get<boolean>('someURL/getvipstatus');
+            
     }
 
     setVipStatus(newStatus: boolean): void {

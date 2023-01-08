@@ -14,7 +14,7 @@ export class VipRouteGuard implements CanActivate {
     ) { }
 
     canActivate(): Observable<boolean | UrlTree> {  //next: ActivatedRouteSnapshot
-        return this.vipService.getVipStatus().pipe(
+        return this.vipService.isVip().pipe(
             map(res => {
                 if (!res) {
                     this.snackbar.open('You\'re not a VIP member, redirected to the Normal page...', 'OK', {
