@@ -12,6 +12,9 @@ import { VipService } from './service/vip.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExtraContentComponent } from './extra-content/extra-content.component';
+import { ClickedRouteGuard } from './guard/click.guard';
+import { VipRouteGuard } from './guard/vip.guard';
+import { SomeService } from './service/some.service';
 
 
 @NgModule({
@@ -31,7 +34,7 @@ import { ExtraContentComponent } from './extra-content/extra-content.component';
     HttpClientModule,
     MatSnackBarModule
   ],
-  providers: [VipService],
+  providers: [VipService, SomeService, ClickedRouteGuard, VipRouteGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
