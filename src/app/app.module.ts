@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { VipService } from './service/vip.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ExtraContentComponent } from './extra-content/extra-content.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     DashboardComponent,
     VipComponent,
-    NormalComponent
+    NormalComponent,
+    ExtraContentComponent
   ],
   imports: [
     BrowserModule,

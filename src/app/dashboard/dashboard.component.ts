@@ -31,4 +31,8 @@ export class DashboardComponent implements OnInit {
     this.vipService.setVipStatus($event.checked);
   }
 
+  onExtraClick(): void {
+    this.router.navigate(['/extra-content']);
+  }
+
 }

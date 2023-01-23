@@ -1,3 +1,11 @@
-<mat-checkbox [checked]="isVip" (change)="toggle($event)" class="large-margin">I am a VIP subscriber</mat-checkbox>
-<button mat-raised-button color="primary" (click)="onNormalClick()" class="basic-margin">Normal content</button>
-<button mat-raised-button color="accent" (click)="onVipClick()" class="basic-margin">VIP content</button>
+<div class="container">
+    <mat-checkbox [checked]="isVip" (change)="toggle($event)" class="large-margin">I am a VIP subscriber</mat-checkbox>
+    <button mat-raised-button color="primary" (click)="onNormalClick()" class="basic-margin">Normal content</button>
+    <button mat-raised-button color="accent" (click)="onVipClick()" class="basic-margin">VIP content</button>
+</div>
+
+<div class="container">
+    <h4>Extra content</h4>
+    <p>Collect some clicks in the Normal content page, and access the Extra content based on your click count.</p>
+    <button mat-raised-button color="warn" (click)="onExtraClick()" class="basic-margin">Extra content</button>
+</div>

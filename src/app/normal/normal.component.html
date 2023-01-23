@@ -1,1 +1,7 @@
-<p>This is the normal content</p>
+<div style="margin-left: 2em;">
+    <h4>Normal content</h4>
+    <p>Collect clicks to open the extra content!</p>
+
+    <button mat-raised-button color="primary" (click)="onClick()" class="basic-margin">Click me to collect clicks!</button>
+    <p>Number of clicks: {{ currentClicks | async }}</p>
+</div>

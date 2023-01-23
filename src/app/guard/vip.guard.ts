@@ -13,7 +13,7 @@ export class VipRouteGuard implements CanActivate {
         private snackbar: MatSnackBar
     ) { }
 
-    canActivate(): Observable<boolean | UrlTree> {  //next: ActivatedRouteSnapshot
+    canActivate(): Observable<boolean | UrlTree> {
         return this.vipService.isVip().pipe(
             map(res => {
                 if (!res) {
