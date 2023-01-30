@@ -18,7 +18,7 @@ export class ClickedRouteGuard implements CanActivate {
                 if(route.data['requiredClicks'] <= res) {
                     return true;
                 }
-                this.snackbar.open('Your clicks are not enough. You need atleast 5 clicks', 'OK',
+                this.snackbar.open(`Your clicks are not enough. You need atleast ${ route.data['requiredClicks']} clicks`, 'OK',
                 {
                    duration: 3000,
                    verticalPosition: 'top'
